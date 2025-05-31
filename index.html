@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Top 5 Người Bạn Hiểu Tôi Nhất - Hello Kitty Style</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Comfortaa&display=swap');
+  body {
+    font-family: 'Comfortaa', cursive, Arial, sans-serif;
+    margin: 0; padding: 0;
+    background: #fff0f6 url('https://i.imgur.com/I5l7HhK.png') repeat; /* nhẹ background hoa */
+    color: #4a2c3a;
+  }
+  .container {
+    max-width: 600px; margin: 30px auto; padding: 20px;
+    background: #fff; border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(255,105,180,0.3);
+    border: 2px solid #ff99cc;
+  }
+  h1 {
+    text-align: center;
+    color: #ff66b3;
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+  }
+  h2 {
+    color: #ff66b3;
+    text-align: center;
+    margin-top: 30px;
+  }
+  .kitty-icon {
+    display: block;
+    margin: 0 auto 20px;
+    width: 100px;
+  }
+  .question {
+    margin-bottom: 22px;
+  }
+  p {
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+  }
+  label {
+    display: block;
+    margin: 5px 0;
+    cursor: pointer;
+    border-radius: 12px;
+    padding: 8px 12px;
+    transition: background 0.3s ease;
+  }
+  label:hover {
+    background: #ffd6e8;
+  }
+  input[type="radio"], input[type="checkbox"] {
+    margin-right: 10px;
+    accent-color: #ff66b3;
+  }
+  input[type="text"], input[type="name"] {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border: 2px solid #ff99cc;
+    border-radius: 12px;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+  }
+  input[type="text"]:focus, input[type="name"]:focus {
+    outline: none;
+    border-color: #ff66b3;
+  }
+  button {
+    background: #ff66b3;
+    border: none;
+    padding: 12px 30px;
+    color: white;
+    font-weight: 700;
+    font-size: 1.1rem;
+    border-radius: 20px;
+    cursor: pointer;
+    display: block;
+    margin: 0 auto 10px;
+    box-shadow: 0 4px 15px rgba(255,105,180,0.5);
+    transition: background 0.3s ease;
+  }
+  button:hover {
+    background: #ff3385;
+  }
+  .result {
+    text-align: center;
+    padding: 15px;
+    border: 2px solid #ff99cc;
+    border-radius: 15px;
+    background: #ffe6f2;
+    margin-top: 25px;
+    color: #9a2c5c;
+  }
+  .leaderboard {
+    margin-top: 30px;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 1rem;
+  }
+  th, td {
+    padding: 10px;
+    border-bottom: 1px solid #ffd6e8;
+    text-align: center;
+    color: #7a3a57;
+  }
+  th {
+    background: #ffb3d1;
+    border-radius: 12px 12px 0 0;
+  }
+  .footer {
+    margin-top: 40px;
+    font-size: 0.9rem;
+    color: #aa6699;
+    text-align: center;
+  }
+  /* Responsive */
+  @media (max-width: 640px) {
+    .container { margin: 10px; padding: 15px; }
+    h1 { font-size: 2rem; }
+  }
+</style>
+</head>
+<body>
+  <div class="container">
+    <img class="kitty-icon" src="https://i.imgur.com/F2fAyIP.png" alt="Hello Kitty Icon" />
+    <h1>Top 5 Người Bạn Hiểu Tôi Nhất</h1>
+    <div id="quiz-container">
+      <form id="quiz-form">
+        <div class="question">
+          <p>1. Tui thích ăn gì?</p>
+          <label><input type="radio" name="q1" value="A" /> A. Sườn xào chua ngọt</label>
+          <label><input type="radio" name="q1" value="B" /> B. Cơm cháy</label>
+          <label><input type="radio" name="q1" value="C" /> C. Sushi</label>
+          <label><input type="radio" name="q1" value="D" /> D. Mì cay</label>
+          <label><input type="radio" name="q1" value="E" /> E. All =))</label>
+        </div>
+
+        <div class="question">
+          <p>2. Tui thích làm gì khi rảnh?</p>
+          <label><input type="radio" name="q2" value="A" /> A. Nấu ăn</label>
+          <label><input type="radio" name="q2" value="B" /> B. Chơi game</label>
+          <label><input type="radio" name="q2" value="C" /> C. Đi chơi</label>
+          <label><input type="radio" name="q2" value="D" /> D. Vẽ</label>
+        </div>
+
+        <div class="question">
+          <p>3. Tui thích nhân vật anime nào nhất?</p>
+          <label><input type="radio" name="q3" value="A" /> A. Asmodeus Alice</label>
+          <label><input type="radio" name="q3" value="B" /> B. Lead</label>
+          <label><input type="radio" name="q3" value="C" /> C. Hisoka</label>
+          <label><input type="radio" name="q3" value="D" /> D. Yugi</label>
+        </div>
+
+        <div class="question">
+          <p>4. Nhân vật phim tui thích nhất? (Chọn tất cả các đáp án đúng)</p>
+          <label><input type="checkbox" name="q4" value="A" /> A. Mặc Vũ</label>
+          <label><input type="checkbox" name="q4" value="B" /> B. Long Ca</label>
+          <label><input type="checkbox" name="q4" value="C" /> C. Cố Trường Ca</label>
+          <label><input type="checkbox" name="q4" value="D" /> D. Diệp Vọng Xuyên</label>
+        </div>
+
+        <div class="question">
+          <p>5. Bạn thích gì ở tui?</p>
+          <input type="text" name="q5" placeholder="Viết câu trả lời của bạn ở đây..." required />
+        </div>
+
+        <div class="question">
+          <label for="friendName">Tên bạn làm quiz:</label>
+          <input type="text" id="friendName" name="friendName" placeholder="Nhập tên bạn..." required />
+        </div>
+
+        <button type="submit">Nộp bài</button>
+      </form>
+    </div>
+
+    <div id="result" class="result" style="display:none;"></div>
+
+    <div id="leaderboard" class="leaderboard" style="display:none;">
+      <h2>Top 5 Người Bạn Hiểu Tôi Nhất</h2>
+      <table>
+        <thead><tr><th>Hạng</th><th>Tên</th><th>Điểm</th></tr></thead>
+        <tbody id="leaderboard-body"></tbody>
+      </table>
+    </div>
+
+    <div class="footer">
+      &copy; 2025 - Quiz "Top 5 Người Bạn Hiểu Tôi Nhất" - Designed with ❤ by ChatGPT
+    </div>
+  </div>
+
+<script>
+const correctAnswers = {
+  q1: ['E'],
+  q2: ['B'],
+  q3: ['A'],
+  q4: ['A','D'],
+};
+
+function calculateScore(formData) {
+  let score = 0;
+
+  if (formData.get('q1') === 'E') score++;
+  if (formData.get('q2') === 'B') score++;
+  if (formData.get('q3') === 'A') score++;
+
+  const q4Selections = formData.getAll('q4');
+  const correctQ4 = correctAnswers.q4;
+  if (q4Selections.length === correctQ4.length && correctQ4.every(ans => q4Selections.includes(ans))) {
+    score++;
+  }
+
+  return score;
+}
+
+function saveResult(name, score, answerText) {
+  let leaderboard = JSON.parse(localStorage.getItem('leaderboard')) || [];
+  leaderboard.push({name: name, score: score, answerText: answerText});
+  leaderboard.sort((a,b) => b.score - a.score);
+  leaderboard = leaderboard.slice(0,5);
+  localStorage.setItem('leaderboard', JSON.stringify(leaderboard));
+  return leaderboard;
+}
+
+function displayLeaderboard(leaderboard) {
+  const tbody = document.getElementById('leaderboard-body');
+  tbody.innerHTML = '';
+  leaderboard.forEach((entry, idx) => {
+    const tr = document.createElement('tr');
+    tr.innerHTML = `<td>${idx+1}</td><td>${entry.name}</td><td>${entry.score}</td>`;
+    tbody.appendChild(tr);
+  });
+}
+
+document.getElementById('quiz-form').addEventListener('submit', function(event) {
+  event.preventDefault();
+  const formData = new FormData(this);
+  const score = calculateScore(formData);
+  const name = formData.get('friendName').trim();
+  const answerText = formData.get('q5').trim();
+
+  if (!name) {
+    alert('Vui lòng nhập tên bạn làm quiz!');
+    return;
+  }
+
+  const leaderboard = saveResult(name, score, answerText);
+
+  document.getElementById('result').style.display = 'block';
+  document.getElementById('result').textContent = `Chúc mừng ${name}! Bạn được ${score} điểm.`;
+
+  displayLeaderboard(leaderboard);
+
+  document.getElementById('leaderboard').style.display = 'block';
+
+  // Scroll xuống bảng xếp hạng
+  document.getElementById('leaderboard').scrollIntoView({behavior: 'smooth'});
+
+  this.reset();
+});
+</script>
+</body>
+</html>
